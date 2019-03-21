@@ -1,18 +1,24 @@
-def calc_add(a, b):
-    print('{} + {} ='.format(str(a), str(b)), end=' ')
-    return a + b
+def calc_add(*args):
+    print(args)
+    list_args = list(args[0].strip(' ').split(' ')
+    return sum([int(i) for i in list_args])
+
+
 
 def calc_substract(a, b):
     print('{} + {} ='.format(str(a), str(b)), end=' ')
     return a - b
 
-def calc_multiple(a, b):
+def calc_multiple(a, b, *args):
     print('{} + {} ='.format(str(a), str(b)), end=' ')
     return a * b
 
 def calc_divide(a, b):
     print('{} + {} ='.format(str(a), str(b)), end=' ')
-    return a / b
+    try:
+        return a / b
+    except ZeroDivisionError:
+        print('Nie dzielimy przez zero!')
 
 def check_operation_name(operation):
         if operation in method_dict:
